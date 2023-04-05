@@ -8,7 +8,7 @@
 resource "aws_lb" "LB-Hydrohomie" {
   name               = "LB-Hydrohomie"
   load_balancer_type = "application"
-  subnets            = var.public_subnet_id
+  subnets            = [var.public_subnet_id, var.private_subnet_id]
   security_groups    = [var.security_group_id]
 }
 
